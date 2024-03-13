@@ -1,0 +1,31 @@
+[action_Pasiv_FE1]
+isVisible:false
+isActive:false
+autoTrigger: if numberOfUnitsInTeam(withTag='#FE.H.C.E.' ,withinRange=100)>0
+setUnitStats:selfRegenRate=0.009
+buildSpeed: 0.1s
+displayType: action
+pos: 0.3
+
+
+[action_Pasiv_FE1n]
+isVisible:false
+isActive:false
+autoTrigger: if not numberOfUnitsInTeam(withTag='#FE.H.C.E.' ,greaterThan=0,withinRange=100)
+setUnitStats:selfRegenRate=0
+buildSpeed: 0.1s
+displayType: action
+pos: 0.3
+
+
+[decal_FE-aure]
+xOffsetRelative: -15
+yOffsetRelative: -15
+image: ROOT:Fraction\H.E.C.\H.C.E. data\fraction-data\aura-pasivFE.png
+imageScale: 0.3
+isVisible: if self.numberOfUnitsInTeam(withTag='#FE.H.C.E.', greaterThan=0,withinRange=100)
+onlyWhileAlive:true
+alpha:0.9
+hOffset:0
+layer:afterBody
+teamColors: false

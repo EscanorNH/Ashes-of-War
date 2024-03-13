@@ -1,0 +1,33 @@
+[hiddenAction_ArmorUp1]
+autoTrigger: if self.globalTeamTags(includes='#1lv-com-tikon') and not self.tags(includes='ArmourUpG') and not self.tags(includes='#ekzo-infantry')
+temporarilyAddTags: ArmourUpG, #armor-greid1
+setUnitStats: Armour+=2
+
+[hiddenAction_ArmorUp2]
+autoTrigger: if self.globalTeamTags(includes='infinityLv2-armor-h.c.e.') and not self.tags(includes='ArmourUpG2')
+temporarilyAddTags: ArmourUpG2, #armor-greid2
+setUnitStats: Armour+=3
+
+
+[hiddenAction_Remove_ArmorUp1]
+autoTrigger: if not self.globalTeamTags(includes='infinityLv1-armor-h.c.e.') and self.tags(includes='ArmourUpG')
+temporarilyRemoveTags: ArmourUpG
+setUnitStats:armour-=2
+
+[hiddenAction_Remove_ArmorUp2]
+autoTrigger: if not self.globalTeamTags(includes='infinityLv2-armor-h.c.e.') and self.tags(includes='ArmourUpG2')
+temporarilyRemoveTags: ArmourUpG2
+setUnitStats:armour-=3
+
+
+[decal_lv1-com-tikon]
+yOffsetAbsolute: -10
+image: ROOT:Fraction\Tikontris\Tikontris data\Infected icon\aura-comTikontris.png
+imageScale: 0.5
+isVisible: if self.numberOfUnitsInTeam(withTag='#1lv-com-tikon', greaterThan=0,withinRange=100)
+onlyWhileAlive:true
+alpha:0.8
+hOffset:0
+layer:afterBody
+teamColors: false
+alwaysStartDirAtZero: true

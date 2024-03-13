@@ -1,0 +1,58 @@
+[hiddenAction_PasivW_IC1]
+@define healthIncrease=50
+@define number=1
+autoTrigger: if numberOfUnitsInTeam(withTag='#w${number}I_ic',withinRange=200)>0 and not self.tags(includes='HpUp${number}')
+temporarilyAddTags: HpUp${number}, #w1aura_ic
+setUnitStats:maxHp+=${healthIncrease}, Hp+=${healthIncrease}
+
+[hiddenAction_PasivW_IC2]
+@define healthIncrease=100
+@define number=2
+@copyFromSection:hiddenAction_PasivW_IC1
+
+[hiddenAction_PasivW_IC3]
+@define healthIncrease=200
+@define number=3
+@copyFromSection:hiddenAction_PasivW_IC1
+
+[hiddenAction_Remove_PasivW_IC1]
+@define healthIncrease=50
+@define number=1
+autoTrigger: if numberOfUnitsInTeam(withTag='#w${number}I_ic',withinRange=200)<1 and self.tags(includes='HpUp${number}')
+temporarilyRemoveTags: HpUp${number}
+setUnitStats:maxHp-=${healthIncrease}, Hp-=${healthIncrease}
+
+[hiddenAction_Remove_PasivW_IC2]
+@define healthIncrease=100
+@define number=2
+@copyFromSection:hiddenAction_Remove_PasivW_IC1
+
+[hiddenAction_Remove_PasivW_IC3]
+@define healthIncrease=200
+@define number=3
+@copyFromSection:hiddenAction_Remove_PasivW_IC1
+
+
+[arm_2]
+hidden: if not numberOfUnitsInTeam(withTag='#w1I_ic', greaterThan=0,withinRange=200)
+x: 0
+y: 0
+image_end: ROOT:Fraction\H.E.C.\Cap\Infantry commander\aura.png
+drawOverBody: false
+image_end_teamColors: true
+
+[arm_3]
+hidden: if not numberOfUnitsInTeam(withTag='#w2I_ic', greaterThan=0,withinRange=200)
+x: 0
+y: 0
+image_end: ROOT:Fraction\H.E.C.\Cap\Infantry commander\aura-lv2.png
+drawOverBody: false
+image_end_teamColors: true
+
+[arm_4]
+hidden: if not numberOfUnitsInTeam(withTag='#w3I_ic', greaterThan=0,withinRange=200)
+x: 0
+y: 0
+image_end: ROOT:Fraction\H.E.C.\Cap\Infantry commander\aura-lv3.png
+drawOverBody: false
+image_end_teamColors: true

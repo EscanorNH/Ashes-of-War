@@ -1,0 +1,23 @@
+[core]
+copyFrom: ROOT:Menu\Structure\AI\Al.template
+
+[hiddenAction_ArmorUp1]
+autoTrigger: if self.globalTeamTags(includes='gidravlic-adiro-h.c.e.') and not self.tags(includes='GidravUpG')
+temporarilyAddTags: ArmourUpG, #armor-greid1
+setUnitStats: moveSpeed=${movement.moveSpeed}*1.15
+
+[hiddenAction_ArmorUp2]
+autoTrigger: if self.globalTeamTags(includes='vehicleLv2-armor-h.c.e.') and not self.tags(includes='ArmourUpG2')
+temporarilyAddTags: ArmourUpG2, #armor-greid2
+setUnitStats: Armour+=5
+
+
+[hiddenAction_Remove_ArmorUp1]
+autoTrigger: if not self.globalTeamTags(includes='gidravlic-adiro-h.c.e.') and self.tags(includes='ArmourUpG')
+temporarilyRemoveTags: GidravUpG
+setUnitStats:armour-=3
+
+[hiddenAction_Remove_ArmorUp2]
+autoTrigger: if not self.globalTeamTags(includes='vehicleLv2-armor-h.c.e.') and self.tags(includes='ArmourUpG2')
+temporarilyRemoveTags: ArmourUpG2
+setUnitStats:armour-=5

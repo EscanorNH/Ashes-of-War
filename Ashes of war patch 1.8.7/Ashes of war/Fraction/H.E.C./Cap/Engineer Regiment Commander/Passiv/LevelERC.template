@@ -1,0 +1,277 @@
+[action_level1]
+isVisible: if self.resource(type='xp', lessThan=200) and numberOfUnitsInTeam(withTag='#ERC_LV1', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=199) or (self.resource(type='xp', lessThan=200) and self.globalTeamTags(includes='#ERC_LV2'))
+
+text: Level: (1)
+description: 200 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+resourceAmount:xp
+
+alsoTriggerAction:level2Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV2')
+
+[hiddenAction_level2Tag]
+addGlobalTeamTags:#ERC_LV2
+temporarilyRemoveTags: #ERC_LV1
+temporarilyAddTags: #ERC_LV2
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.1
+addResources: LV=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level2]
+isVisible: if self.resource(type='xp', greaterThan=200) and self.resource(type='xp', lessThan=500) and numberOfUnitsInTeam(withTag='#ERC_LV2', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=499) or (self.resource(type='xp', lessThan=500) and self.globalTeamTags(includes='#ERC_LV3'))
+
+text: Level: (2)
+description: 500 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level3Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV3')
+
+[hiddenAction_level3Tag]
+addGlobalTeamTags:#ERC_LV3
+temporarilyRemoveTags: #ERC_LV2
+temporarilyAddTags: #ERC_LV3
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.1
+addResources: LV=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level3]
+isVisible: if self.resource(type='xp', greaterThan=500) and self.resource(type='xp', lessThan=900) and numberOfUnitsInTeam(withTag='#ERC_LV3', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=899) or (self.resource(type='xp', lessThan=900) and self.globalTeamTags(includes='#ERC_LV4'))
+
+text: Level: (3)
+description: 900 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level4Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV4')
+
+[hiddenAction_level4Tag]
+addGlobalTeamTags:#ERC_LV4
+temporarilyRemoveTags: #ERC_LV3
+temporarilyAddTags: #ERC_LV4
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.1
+addResources: LVR=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level4]
+isVisible: if self.resource(type='xp', greaterThan=900) and self.resource(type='xp', lessThan=1400) and numberOfUnitsInTeam(withTag='#ERC_LV4', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=1399) or (self.resource(type='xp', lessThan=1400) and self.globalTeamTags(includes='#ERC_LV5'))
+
+text: Level: (4)
+description: 1400 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level5Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV5')
+
+[hiddenAction_level5Tag]
+addGlobalTeamTags:#ERC_LV5
+temporarilyRemoveTags: #ERC_LV4
+temporarilyAddTags: #ERC_LV5
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.09
+addResources: LV=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level5]
+isVisible: if self.resource(type='xp', greaterThan=1400) and self.resource(type='xp', lessThan=2000) and numberOfUnitsInTeam(withTag='#ERC_LV5', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=1999) or (self.resource(type='xp', lessThan=2000) and self.globalTeamTags(includes='#ERC_LV6'))
+
+text: Level: (5)
+description: 2000 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level6Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV6')
+
+[hiddenAction_level6Tag]
+addGlobalTeamTags:#ERC_LV6
+temporarilyRemoveTags: #ERC_LV5
+temporarilyAddTags: #ERC_LV6
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.06
+addResources: LV=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level6]
+isVisible: if self.resource(type='xp', greaterThan=2000) and self.resource(type='xp', lessThan=2700) and numberOfUnitsInTeam(withTag='#ERC_LV6', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=2699) or (self.resource(type='xp', lessThan=2700) and self.globalTeamTags(includes='#ERC_LV7'))
+
+text: Level: (6)
+description: 2700 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level7Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV7')
+
+[hiddenAction_level7Tag]
+addGlobalTeamTags:#ERC_LV7
+temporarilyRemoveTags: #ERC_LV6
+temporarilyAddTags: #ERC_LV7
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.06
+addResources: LV=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level7]
+isVisible: if self.resource(type='xp', greaterThan=2700) and self.resource(type='xp', lessThan=3500) and numberOfUnitsInTeam(withTag='#ERC_LV7', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=3499) or (self.resource(type='xp', lessThan=3500) and self.globalTeamTags(includes='#ERC_LV8'))
+
+text: Level: (7)
+description: 3500 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level8Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV8')
+
+[hiddenAction_level8Tag]
+addGlobalTeamTags:#ERC_LV8
+temporarilyRemoveTags: #ERC_LV7
+temporarilyAddTags: #ERC_LV8
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.05
+addResources: LVR=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level8]
+isVisible: if self.resource(type='xp', greaterThan=3500) and self.resource(type='xp', lessThan=4400) and numberOfUnitsInTeam(withTag='#ERC_LV8', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=4399) or (self.resource(type='xp', lessThan=4400) and self.globalTeamTags(includes='#ERC_LV9'))
+
+text: Level: (8)
+description: 4400 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level9Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV9')
+
+[hiddenAction_level9Tag]
+addGlobalTeamTags:#ERC_LV9
+temporarilyRemoveTags: #ERC_LV8
+temporarilyAddTags: #ERC_LV9
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.05
+addResources: LV=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level9]
+isVisible: if self.resource(type='xp', greaterThan=4400) and self.resource(type='xp', lessThan=5400) and numberOfUnitsInTeam(withTag='#ERC_LV9', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=5399) or (self.resource(type='xp', lessThan=5400) and self.globalTeamTags(includes='#ERC_LV10'))
+
+text: Level: (9)
+description: 5400 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level10Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV10')
+
+[hiddenAction_level10Tag]
+addGlobalTeamTags:#ERC_LV10
+temporarilyRemoveTags: #ERC_LV9
+temporarilyAddTags: #ERC_LV10
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.05
+addResources: LV=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level10]
+isVisible: if self.resource(type='xp', greaterThan=5400) and self.resource(type='xp', lessThan=6500) and numberOfUnitsInTeam(withTag='#ERC_LV10', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=6499) or (self.resource(type='xp', lessThan=6500) and self.globalTeamTags(includes='#ERC_LV11'))
+
+text: Level: (10)
+description: 6500 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level11Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV11')
+
+[hiddenAction_level11Tag]
+addGlobalTeamTags:#ERC_LV11
+temporarilyRemoveTags: #ERC_LV10
+temporarilyAddTags: #ERC_LV11
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.05
+addResources: LV=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level11]
+isVisible: if self.resource(type='xp', greaterThan=6500) and self.resource(type='xp', lessThan=7700) and numberOfUnitsInTeam(withTag='#ERC_LV11', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=7699) or (self.resource(type='xp', lessThan=7700) and self.globalTeamTags(includes='#ERC_LV12'))
+
+text: Level: (11)
+description: 7700 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level12Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#ERC_LV12')
+
+[hiddenAction_level12Tag]
+addGlobalTeamTags:#ERC_LV12
+temporarilyRemoveTags: #ERC_LV11
+temporarilyAddTags: #ERC_LV12
+setUnitStats: maxHp+=105, Hp+=105, armour+=2, maxEnergy+=20, shootDamageMultiplier+=0.05
+addResources: LVR=1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level12]
+isVisible: if self.resource(type='xp', greaterThan=7700) and self.resource(type='xp', lessThan=9900) and numberOfUnitsInTeam(withTag='#ERC_LV12', greaterThan=0)
+isActive:false
+
+
+text: Level: (12)
+description: Max level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+resourceAmount_setValue:9900

@@ -1,0 +1,176 @@
+[action_level1]
+isVisible: if self.resource(type='xp', lessThan=200) and numberOfUnitsInTeam(withTag='#C_LV1', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=199) or (self.resource(type='xp', lessThan=199) and self.globalTeamTags(includes='#C_LV2'))
+
+text: Level: (1)
+description: 200 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+resourceAmount:xp
+
+alsoTriggerAction:level2Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#C_LV2')
+
+[hiddenAction_level2Tag]
+addGlobalTeamTags:#C_LV2
+temporarilyRemoveTags: #C_LV1
+temporarilyAddTags: #C_LV2
+setUnitStats: maxHp+=100, Hp+=100, armour+=1, maxEnergy+=20, shootDamageMultiplier+=0.1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level2]
+isVisible: if self.resource(type='xp', greaterThan=200) and self.resource(type='xp', lessThan=500) and numberOfUnitsInTeam(withTag='#C_LV2', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=499) or (self.resource(type='xp', lessThan=500) and self.globalTeamTags(includes='#C_LV3'))
+
+text: Level: (2)
+description: 500 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level3Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#C_LV3')
+
+[hiddenAction_level3Tag]
+addGlobalTeamTags:#C_LV3
+temporarilyRemoveTags: #C_LV2
+temporarilyAddTags: #C_LV3
+addResources: LV=1
+setUnitStats: maxHp+=100, Hp+=100, armour+=1, maxEnergy+=20, shootDamageMultiplier+=0.1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level3]
+isVisible: if self.resource(type='xp', greaterThan=500) and self.resource(type='xp', lessThan=900) and numberOfUnitsInTeam(withTag='#C_LV3', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=899) or (self.resource(type='xp', lessThan=900) and self.globalTeamTags(includes='#C_LV4'))
+
+text: Level: (3)
+description: 900 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level4Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#C_LV4')
+
+[hiddenAction_level4Tag]
+addGlobalTeamTags:#C_LV4
+temporarilyRemoveTags: #C_LV3
+temporarilyAddTags: #C_LV4
+setUnitStats: maxHp+=100, Hp+=100, armour+=1, maxEnergy+=20, shootDamageMultiplier+=0.1
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level4]
+isVisible: if self.resource(type='xp', greaterThan=900) and self.resource(type='xp', lessThan=1400) and numberOfUnitsInTeam(withTag='#C_LV4', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=1399) or (self.resource(type='xp', lessThan=1400) and self.globalTeamTags(includes='#C_LV5'))
+
+text: Level: (4)
+description: 1400 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level5Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#C_LV5')
+
+[hiddenAction_level5Tag]
+addGlobalTeamTags:#C_LV5
+temporarilyRemoveTags: #C_LV4
+temporarilyAddTags: #C_LV5
+addResources: LV=1
+setUnitStats: maxHp+=100, Hp+=100, armour+=1, maxEnergy+=20, shootDamageMultiplier+=0.09
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level5]
+isVisible: if self.resource(type='xp', greaterThan=1400) and self.resource(type='xp', lessThan=2000) and numberOfUnitsInTeam(withTag='#C_LV5', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=1999) or (self.resource(type='xp', lessThan=2000) and self.globalTeamTags(includes='#C_LV6'))
+
+text: Level: (5)
+description: 2000 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level6Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#C_LV6')
+
+[hiddenAction_level6Tag]
+addGlobalTeamTags:#C_LV6
+temporarilyRemoveTags: #C_LV5
+temporarilyAddTags: #C_LV6
+setUnitStats: maxHp+=100, Hp+=100, armour+=1, maxEnergy+=20, shootDamageMultiplier+=0.06
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level6]
+isVisible: if self.resource(type='xp', greaterThan=2000) and self.resource(type='xp', lessThan=2700) and numberOfUnitsInTeam(withTag='#C_LV6', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=2699) or (self.resource(type='xp', lessThan=2700) and self.globalTeamTags(includes='#C_LV7'))
+
+text: Level: (6)
+description: 2700 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level7Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#C_LV7')
+
+[hiddenAction_level7Tag]
+addGlobalTeamTags:#C_LV7
+temporarilyRemoveTags: #C_LV6
+temporarilyAddTags: #C_LV7
+addResources: LV=1
+setUnitStats: maxHp+=100, Hp+=100, armour+=1, maxEnergy+=20, shootDamageMultiplier+=0.06
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level7]
+isVisible: if self.resource(type='xp', greaterThan=2700) and self.resource(type='xp', lessThan=3500) and numberOfUnitsInTeam(withTag='#C_LV7', greaterThan=0)
+isActive:false
+autoTrigger: if self.resource(type='xp', greaterThan=3499) or (self.resource(type='xp', lessThan=3500) and self.globalTeamTags(includes='#C_LV8'))
+
+text: Level: (7)
+description: 3500 XP to next level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+alsoTriggerAction:level8Tag
+alsoTriggerOrQueueActionConditional: if not self.globalTeamTags(includes='#C_LV8')
+
+[hiddenAction_level8Tag]
+addGlobalTeamTags:#C_LV8
+temporarilyRemoveTags: #C_LV7
+temporarilyAddTags: #C_LV8
+setUnitStats: maxHp+=100, Hp+=100, armour+=1, maxEnergy+=20, shootDamageMultiplier+=0.05
+spawnEffects:CUSTOM:lvlUp
+
+
+[action_level8]
+isVisible: if self.resource(type='xp', greaterThan=3500) and self.resource(type='xp', lessThan=4400) and numberOfUnitsInTeam(withTag='#C_LV8', greaterThan=0)
+isActive:false
+
+text: Level: (8)
+description: Max level
+displayType: infoOnly
+pos: 0
+buildSpeed: 0s
+
+resourceAmount:xp
+resourceAmount_setValue:4400

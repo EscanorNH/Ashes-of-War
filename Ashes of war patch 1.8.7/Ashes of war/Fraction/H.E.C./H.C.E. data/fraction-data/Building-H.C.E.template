@@ -1,0 +1,20 @@
+[hiddenAction_ArmorUp1]
+autoTrigger: if self.globalTeamTags(includes='buildingLv1-armor-h.c.e.') and not self.tags(includes='ArmourUpG')
+temporarilyAddTags: ArmourUpG, #armor-greid1
+setUnitStats: Armour+=2
+
+[hiddenAction_ArmorUp2]
+autoTrigger: if self.globalTeamTags(includes='buildingLv2-armor-h.c.e.') and not self.tags(includes='ArmourUpG2')
+temporarilyAddTags: ArmourUpG2, #armor-greid2
+setUnitStats: Armour+=4
+
+
+[hiddenAction_Remove_ArmorUp1]
+autoTrigger: if not self.globalTeamTags(includes='buildingLv1-armor-h.c.e.') and self.tags(includes='ArmourUpG')
+temporarilyRemoveTags: ArmourUpG
+setUnitStats:armour-=2
+
+[hiddenAction_Remove_ArmorUp2]
+autoTrigger: if not self.globalTeamTags(includes='buildingLv2-armor-h.c.e.') and self.tags(includes='ArmourUpG2')
+temporarilyRemoveTags: ArmourUpG2
+setUnitStats:armour-=4

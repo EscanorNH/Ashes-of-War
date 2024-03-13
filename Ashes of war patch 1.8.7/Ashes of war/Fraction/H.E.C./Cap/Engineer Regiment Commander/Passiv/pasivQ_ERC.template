@@ -1,0 +1,59 @@
+[hiddenAction_PasivQ_ERC1]
+@define healthIncrease=10
+@define number=1
+autoTrigger: if numberOfUnitsInTeam(withTag='#q${number}I_erc',withinRange=150)>0 and not self.tags(includes='RangeUp${number}')
+temporarilyAddTags: RangeUp${number}, #q1aura_erc
+setUnitStats:maxAttackRange+=${healthIncrease}
+
+[hiddenAction_PasivQ_ERC2]
+@define healthIncrease=15
+@define number=2
+@copyFromSection:hiddenAction_PasivQ_ERC1
+
+[hiddenAction_PasivQ_ERC3]
+@define healthIncrease=20
+@define number=3
+@copyFromSection:hiddenAction_PasivQ_ERC1
+
+[hiddenAction_Remove_PasivQ_ERC1]
+@define healthIncrease=10
+@define number=1
+autoTrigger: if numberOfUnitsInTeam(withTag='#q${number}I_erc',withinRange=150)<1 and self.tags(includes='RangeUp${number}')
+temporarilyRemoveTags: RangeUp${number}
+setUnitStats:maxAttackRange-=${healthIncrease}
+
+[hiddenAction_Remove_PasivQ_ERC2]
+@define healthIncrease=15
+@define number=2
+@copyFromSection:hiddenAction_Remove_PasivQ_ERC1
+
+[hiddenAction_Remove_PasivQ_ERC3]
+@define healthIncrease=20
+@define number=3
+@copyFromSection:hiddenAction_Remove_PasivQ_ERC1
+
+
+
+[arm_5]
+hidden: if not numberOfUnitsInTeam(withTag='#q1I_erc', greaterThan=0,withinRange=150)
+x: 0
+y: 0
+image_end: ROOT:Fraction\H.E.C.\Cap\Engineer Regiment Commander\aura.png
+drawOverBody: false
+image_end_teamColors: true
+
+[arm_6]
+hidden: if not numberOfUnitsInTeam(withTag='#q2I_erc', greaterThan=0,withinRange=150)
+x: 0
+y: 0
+image_end: ROOT:Fraction\H.E.C.\Cap\Engineer Regiment Commander\aura-lv2.png
+drawOverBody: false
+image_end_teamColors: true
+
+[arm_7]
+hidden: if not numberOfUnitsInTeam(withTag='#q3I_erc', greaterThan=0,withinRange=150)
+x: 0
+y: 0
+image_end: ROOT:Fraction\H.E.C.\Cap\Engineer Regiment Commander\aura-lv3.png
+drawOverBody: false
+image_end_teamColors: true

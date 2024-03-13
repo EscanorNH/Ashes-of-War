@@ -1,0 +1,34 @@
+[hiddenAction_PasivR_ERC1]
+@define healthIncrease=5
+@define number=1
+autoTrigger: if self.globalTeamTags(includes='#r${number}I_erc_aura') and not self.tags(includes='ArmourUp${number}')
+temporarilyAddTags: ArmourUp${number}, #1raura_erc 
+setUnitStats: Armour+=${healthIncrease}
+
+[hiddenAction_PasivR_ERC2]
+@define healthIncrease=10
+@define number=2
+@copyFromSection:hiddenAction_PasivR_ERC1
+
+[hiddenAction_PasivR_ERC3]
+@define healthIncrease=15
+@define number=3
+@copyFromSection:hiddenAction_PasivR_ERC1
+
+[hiddenAction_Remove_PasivR_ERC1]
+@define healthIncrease=5
+@define number=1
+autoTrigger: if not self.globalTeamTags(includes='#r${number}I_erc_aura') and self.tags(includes='ArmourUp${number}')
+temporarilyRemoveTags: ArmourUp${number}
+setUnitStats:armour-=${healthIncrease}
+
+[hiddenAction_Remove_PasivR_ERC2]
+@define healthIncrease=10
+@define number=2
+@copyFromSection:hiddenAction_Remove_PasivR_ERC1
+
+[hiddenAction_Remove_PasivR_ERC3]
+@define healthIncrease=15
+@define number=3
+@copyFromSection:hiddenAction_Remove_PasivR_ERC1
+
