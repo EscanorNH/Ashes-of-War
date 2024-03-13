@@ -1,0 +1,72 @@
+[core]
+dont_load: true
+mass:999999999
+price: 0
+maxHp: 555555
+armour: 999999
+armourMinDamageToKeep: 0
+radius: 1
+displayRadius: 2
+isUnselectable: true
+isUnrepairableUnit: true
+canNotBeDirectlyAttacked: true
+hideScorchMark: true
+stayNeutral: true
+createNeutral: true
+createOnAggressiveTeam: true
+showOnMinimap: false
+fogOfWarSightRange: 0
+effectOnDeath: NONE
+explodeOnDeath:false
+disableAllUnitCollisions:true
+ignoreInUnitCapCalculation: true
+disableDeathOnZeroHp: true
+showInEditor: false
+canNotBeDamaged: true
+
+[decal_health]
+alpha: 0
+isVisible: false
+
+[decal_hpbar]
+alpha: 0
+isVisible: false
+
+[decal_hpbarspec]
+alpha: 0
+isVisible: false
+
+
+[graphics]
+showEnergyBar: false
+showQueueBar: false
+image: ROOT:/data/null.png
+icon_zoomed_out_neverShow: true
+disableLowHpSmoke: true
+disableLowHpFire: true
+image_wreak:  NONE
+image_shadow: NONE
+
+[attack]
+canAttack: false
+canAttackFlyingUnits: false
+canAttackLandUnits: false
+canAttackUnderwaterUnits: false
+maxAttackRange: 5
+shootDelay: 0.2s
+isMelee: true
+
+[turret_1]
+x: 0
+y: 0
+turnSpeed: 50
+projectile: 1
+
+[movement]
+movementType: NONE
+moveSpeed: 0
+maxTurnSpeed: 0
+
+[ai]
+disableUse: true
+

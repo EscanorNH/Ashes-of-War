@@ -1,0 +1,52 @@
+[effect_flameN]
+priority:veryhigh
+alwayStartDirAtZero: true
+dirOffset: 90
+dirOffsetRandom: 13
+image: ROOT:/data/Status/fire.png
+life: 120
+lifeRandom: 25
+total_frames: 4
+animateFrameStart: 0
+animateFrameLooping: true
+animateFrameEnd: 3
+animateFrameStartRandomAdd: 4
+animateFrameSpeed: 0
+atmospheric: true
+fadeOut: true
+attachedToUnit: true
+color: #fdc14d
+#color: #FFFFFF
+fadeInTime:15
+scaleFrom: 0.6
+scaleTo: 1.01
+hSpeed: 0.3
+hSpeedRandom: 0.2
+alpha: 0.8
+drawUnderUnits:false
+liveAfterAttachedDies: false
+xOffsetRelativeRandom: 7
+yOffsetRelativeRandom: 6
+ySpeedRelativeRandom: 0.1
+createWhenOverLand: true
+createWhenOverLiquid: false
+
+[effect_smoke]
+frameIndex: 0
+stripIndex: smoke_black
+spawnChance: 0.8
+life: 85
+lifeRandom: 15
+fadeOut: true
+attachedToUnit: false
+color: #fdc14d
+fadeInTime:15
+scaleFrom: 0.3
+scaleTo: 0.6
+alpha: 0.8
+drawUnderUnits:false
+liveAfterAttachedDies: false
+hSpeed:0.3
+dirOffsetRandom:180
+atmospheric: true
+

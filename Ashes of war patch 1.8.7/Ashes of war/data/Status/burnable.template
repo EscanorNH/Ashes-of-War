@@ -1,0 +1,63 @@
+[hiddenAction_firestatus]
+autoTriggerOnEvent: tookDamage(withTag='#fire')
+temporarilyAddTags: firestatus
+attachments_addNewUnits: smallfire
+attachments_onlyOnSlots: 40
+
+[hiddenAction_corosionstatus]
+autoTriggerOnEvent: tookDamage(withTag='#corosion')
+temporarilyAddTags: corosionstatus
+attachments_addNewUnits: corosion
+attachments_onlyOnSlots: 41
+
+[attachment_40]
+x: 0
+y: 0
+height: 1
+isVisible: false
+setDrawLayerOnTop: true 
+isUnselectable: true
+addTransportedUnits:false
+canAttack: true
+canBeAttackedAndDamaged: true
+keepAliveWhenParentDies: false
+idleDir: 0
+
+[attachment_41]
+x: 0
+y: 0
+height: 0
+isVisible: false
+setDrawLayerOnTop: true 
+isUnselectable: true
+addTransportedUnits:false
+canAttack: true
+canBeAttackedAndDamaged: true
+keepAliveWhenParentDies: false
+idleDir: 0
+
+
+[decal_corosion]
+xOffsetRelative: -15
+yOffsetRelative: -15
+image: ROOT:/data/Status/corosion.png
+imageScale: 1
+isVisible: if numberOfUnitsInAggressiveTeam(withTag='corosion', greaterThan=0,withinRange=5)
+onlyWhileAlive:true
+alpha:0.9
+hOffset:0
+layer:afterBody
+teamColors: false
+
+
+[decal_fire]
+xOffsetRelative: -10
+yOffsetRelative: -15
+image: ROOT:/data/Status/fireicon.png
+imageScale: 1
+isVisible: if numberOfUnitsInAggressiveTeam(withTag='smallfire', greaterThan=0,withinRange=5)
+onlyWhileAlive:true
+alpha:0.9
+hOffset:0
+layer:afterBody
+teamColors: false

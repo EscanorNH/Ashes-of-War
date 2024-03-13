@@ -1,0 +1,35 @@
+[template_dec]
+alwaysStartDirAtZero: true
+onlyOnNonPreview:true
+onlyWhenSelectedByAnyPlayer: false
+onlyWhileAlive: true
+isVisible: if self.hp < self.maxHp
+
+[decal_down]
+image: ROOT:data\hpbar\dHp2.png
+yOffsetAbsolute: 22
+@copyFromSection: template_dec
+
+[decal_hp]
+image: ROOT:data\hpbar\hp.png
+imageScaleX:self.hp()/self.maxHp()
+xOffsetAbsolute: self.hp()/self.maxHp()*12 - 12
+yOffsetAbsolute: 22
+@copyFromSection: template_dec
+
+[decal_ammo]
+image: ROOT:data\hpbar\ammo.png
+imageScaleX:self.energy()/self.maxEnergy()
+xOffsetAbsolute: self.energy()/self.maxEnergy()*10 - 10
+yOffsetAbsolute: 22
+@copyFromSection: template_dec
+
+[decal_rama]
+image: ROOT:data\hpbar\Hp2.png
+yOffsetAbsolute: 22
+@copyFromSection: template_dec
+
+
+[graphics]
+showHealthBar: false
+showEnergyBar: false
