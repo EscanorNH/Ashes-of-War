@@ -1,0 +1,20 @@
+[hiddenAction_attack]
+autoTrigger: if self.isControlledByAI() and self.tags(includes='attack')
+addWaypoint_type: attackMove
+addWaypoint_prepend: true
+clearAllWaypoints:                  true
+addWaypoint_target_nearestUnit_tagged: land
+addWaypoint_target_nearestUnit_team: enemy
+
+[hiddenAction_AttackHooray]
+autoTrigger:if numberOfUnitsInTeam(greaterThan=9, withTag='attackgroup', withinRange=150)
+temporarilyAddTags:attack
+
+[hiddenAction_MoveToRallyPoint]
+autoTrigger:if self.isControlledByAI and  not self.tags(includes='attack')
+addWaypoint_target_nearestUnit_tagged: botospawn
+#clearAllWaypoints:                  true
+addWaypoint_type:                   move
+addWaypoint_prepend:                true
+addWaypoint_target_nearestUnit_team:ally
+addWaypoint_maxTime:10s

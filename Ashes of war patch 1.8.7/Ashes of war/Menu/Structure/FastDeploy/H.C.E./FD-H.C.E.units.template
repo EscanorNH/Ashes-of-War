@@ -1,0 +1,137 @@
+##########Т1##########
+
+[action_Scout]
+isLockedAlt: if self.queueSize() > 0 or self.transportingCount(greaterThan=0)
+isLockedAltMessage: [You cannot order multiple units at the same time]
+isLockedAltMessage_ru: [Нельзя заказывать несколько единиц одновременно]
+ai_isHighPriority:true
+price: FDpoint=140
+text: Reconnaissance Squad
+description: -Scout \n-Doesn't attack \n Damage resistance: \n [Ph.-1  B.-1  F.-0] \n [Ch.-1  P.-1  E.-0]
+
+text_ru: Отряд Разведки 
+description_ru: -Разведчик \n-Не атакует \n Сопротевление урону: \n [Физ.-1  Взр.-1  Огн.-0] \n [Хим.-1  Пла.-1  Енг.-0]
+
+displayType: action
+buildSpeed: 25s
+iconImage: ROOT:Fraction\H.E.C.\Infantry\T1\Scout\Icon.png
+pos:0.2
+allowMultipleInQueue:true
+addUnitsIntoTransport: Скаут*2
+
+[action_Infantryman]
+isLockedAlt: if self.queueSize() > 0 or self.transportingCount(greaterThan=0)
+isLockedAltMessage: [You cannot order multiple units at the same time]
+isLockedAltMessage_ru: [Нельзя заказывать несколько единиц одновременно]
+ai_isHighPriority:true
+price: FDpoint=400
+text: Infantry Squad
+description: -The main combat unit of H.C.E. \n-Can throw smoke grenades \n-Attacks air and ground units \n Damage type: \n [Ph.-1] \n Damage resistance: \n [Ph.-1  B.-1  F.-0] \n [Ch.-1  P.-1  E.-0]
+
+text_ru: Отряд Пехотинцев
+description_ru: -Основная боевая еденица Ч.К.И. \n-Может кидать дымовые гранаты \n-Атакует вождушные и наземные еденицы \n Тип урона: \n [Физ.-1] \n Сопротевление урону: \n [Физ.-1  Взр.-1  Огн.-0] \n [Хим.-1  Пла.-1  Енг.-0]
+
+displayType: action
+buildSpeed: 25s
+iconImage: ROOT:Fraction\H.E.C.\Infantry\T1\Infantryman\Icon.png
+pos:0.2
+allowMultipleInQueue:true
+addUnitsIntoTransport: Пехотинец*5
+
+[action_Grenadier]
+isLockedAlt: if self.queueSize() > 0 or self.transportingCount(greaterThan=0)
+isLockedAltMessage: [You cannot order multiple units at the same time]
+isLockedAltMessage_ru: [Нельзя заказывать несколько единиц одновременно]
+ai_isHighPriority:true
+price: FDpoint=540
+text: Grenadier Squad
+description: -An infantryman with a grenade launcher \n-Effective against vehicles \n-Attacks airborne aircraft up to medium altitude and ground units \n Damage type: \n [B.-1] \n Damage resistance: \n [Ph.-1  B.-1  F.-0] \n [Ch.-1  P.-1  E.-0]
+
+text_ru: Отряд Гренадеров
+description_ru: -Пехотинец с гранатомётом \n-Эффективен против техники \n-Атакует воздушные до средней высоты и наземные единицы \n Тип урона: \n [Взр.-1] \n Сопротевление урону: \n [Физ.-1  Взр.-1  Огн.-0] \n [Хим.-1  Пла.-1  Енг.-0]
+
+displayType: action
+buildSpeed: 25s
+iconImage: ROOT:Fraction\H.E.C.\Infantry\T1\Grenadier\Icon.png
+pos:0.2
+allowMultipleInQueue:true
+addUnitsIntoTransport: Гранатометчик*3
+
+[action_Sniper]
+isLockedAlt: if self.queueSize() > 0 or self.transportingCount(greaterThan=0)
+isLockedAltMessage: [You cannot order multiple units at the same time]
+isLockedAltMessage_ru: [Нельзя заказывать несколько единиц одновременно]
+ai_isHighPriority:true
+price: FDpoint=600
+text: Sniper Squad
+description: -Infantryman with a sniper rifle \n-Effective against infantry \n-Attacks air and ground units \n Damage type: \n [Ph.-1] \n Damage resistance: \n [Ph.-1  B.-0  F.-0] \n [Ch.-1  P.-0  E.-0]
+
+text_ru: Отряд Снайперов
+description_ru: -Пехотинец с снайперской винтовкой \n-Эффективен против пехоты \n-Атакует вождушые и наземные еденицы \n Тип урона: \n [Физ.-1] \n Сопротевление урону: \n [Физ.-1  Взр.-0  Огн.-0] \n [Хим.-1  Пла.-0  Енг.-0]
+
+displayType: action
+buildSpeed: 25s
+iconImage: ROOT:Fraction\H.E.C.\Infantry\T1\Sniper\Icon.png
+pos:0.2
+allowMultipleInQueue:true
+addUnitsIntoTransport: Снайпер*3
+
+[action_Medic]
+isLockedAlt: if self.queueSize() > 0 or self.transportingCount(greaterThan=0)
+isLockedAltMessage: [You cannot order multiple units at the same time]
+isLockedAltMessage_ru: [Нельзя заказывать несколько единиц одновременно]
+ai_isHighPriority:true
+price: FDpoint=200
+text: Medic's Squad
+description: -Can heal soldiers of H.C.E. \n-Doesn't attack \n Damage resistance: \n [Ph.-1  B.-1  F.-0] \n [Ch.-1  P.-1  E.-0]
+
+text_ru: Отряд Медиков
+description_ru: -Может лечить солдат Ч.К.И. \n-Не атакует \n Сопротевление урону: \n [Физ.-1  Взр.-1  Огн.-0] \n [Хим.-1  Пла.-1  Енг.-0]
+
+displayType: action
+buildSpeed: 25s
+iconImage: ROOT:Fraction\H.E.C.\Infantry\T1\Medic\Icon.png
+pos:0.2
+allowMultipleInQueue:true
+addUnitsIntoTransport: Медик*2
+
+[action_Sapper]
+isLockedAlt: if self.queueSize() > 0 or self.transportingCount(greaterThan=0)
+isLockedAltMessage: [You cannot order multiple units at the same time]
+isLockedAltMessage_ru: [Нельзя заказывать несколько единиц одновременно]
+ai_isHighPriority:true
+price: FDpoint=200
+text: Sapper Squad
+description: -Helps in defending positions by placing mines and detecting them \n-Does not attack \n Damage resistance: \n [Ph.-1  B.-2  F.-0] \n [Ch.-1  P.-0  E.-0]
+
+text_ru: Отряд Сапёров 
+description_ru: -Помогает в обороне позиций, раставляя мины и обнаруживая их \n-Не атакует \n Сопротевление урону: \n [Физ.-1  Взр.-2  Огн.-0] \n [Хим.-1  Пла.-0  Енг.-0]
+
+displayType: action
+buildSpeed: 25s
+iconImage: ROOT:Fraction\H.E.C.\Infantry\T1\Sapper\Icon.png
+pos:0.2
+allowMultipleInQueue:true
+addUnitsIntoTransport: Сапёр*2
+
+
+
+[action_Coyote]
+isLockedAlt: if self.queueSize() > 0 or self.transportingCount(greaterThan=0)
+isLockedAltMessage: [You cannot order multiple units at the same time]
+isLockedAltMessage_ru: [Нельзя заказывать несколько единиц одновременно]
+ai_isHighPriority:true
+price: FDpoint=800
+text: BTR "Coyote"
+description: -Light infantry transport \n-Effective against enemy infantry \n-Attacks air and ground targets \n Damage type: \n [Ph.-1] \n Damage resistance: \n [Ph.-2  B.-1  F.-2] \n [Ch.-1  P.-1  E.-1]
+
+text_ru: БТР "Койот"
+description_ru: -Легкий транспорт пехоты \n-Эффективен против пехоты врага \n-Атакует вождушные и наземные цели \n Тип урона: \n [Физ.-1] \n Сопротевление урону: \n [Физ.-2  Взр.-1  Огн.-2] \n [Хим.-1  Пла.-1  Енг.-1]
+
+displayType: action
+buildSpeed: 35s
+iconImage: ROOT:Fraction\H.E.C.\Technique\T1\APC Coyote\Icon.png
+pos:0.3
+allowMultipleInQueue:true
+addUnitsIntoTransport: БТР "Койот"
+

@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<map version="1.2" orientation="orthogonal" renderorder="right-down" width="150" height="200" tilewidth="20" tileheight="20" nextobjectid="1">
+  <properties>
+    <property name="sw2" value="1534" />
+    <property name="sw3" value="1522" />
+    <property name="sw4" value="1532" />
+    <property name="sw5" value="1525" />
+    <property name="sw6" value="1528" />
+    <property name="sw1" value="418" />
+  </properties>
+  <tileset source="units.tsx" firstgid="1" />
+  <tileset source="misc.tsx" firstgid="280" />
+  <tileset source="decoration.tsx" firstgid="298" />
+  <tileset firstgid="333" name="Deep Water" columns="1" tilecount="1" tileheight="20" tilewidth="20">
+    <image source="bitmaps/deepwater.png" width="20" height="20" trans="008a76" />
+    <tile id="0">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+  </tileset>
+  <tileset source="terrain/Dirt.tsx" firstgid="334" />
+  <tileset source="terrain/Dirt_Details.tsx" firstgid="344" />
+  <tileset source="terrain/Ice.tsx" firstgid="404" />
+  <tileset source="terrain/Lava.tsx" firstgid="414" />
+  <tileset source="terrain/Long Grass.tsx" firstgid="429" />
+  <tileset source="terrain/Mountain.tsx" firstgid="469" />
+  <tileset source="terrain/Sand.tsx" firstgid="504" />
+  <tileset firstgid="546" name="Shallow Water" columns="3" tilecount="6" tileheight="20" tilewidth="20">
+    <image source="bitmaps/shallowwater.png" width="60" height="40" trans="008a76" />
+    <tile id="0">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+  </tileset>
+  <tileset source="terrain/Short Grass.tsx" firstgid="552" />
+  <tileset source="terrain/Snow.tsx" firstgid="553" />
+  <tileset source="terrain/Stone.tsx" firstgid="633" />
+  <tileset source="terrain/Water.tsx" firstgid="669" />
+  <tileset source="ridges/Dirt Dirt - Ridge.tsx" firstgid="670" />
+  <tileset source="ridges/Dirt ShalowWater - Ridge.tsx" firstgid="691" />
+  <tileset source="ridges/Ice Ice - Flat.tsx" firstgid="712" />
+  <tileset source="ridges/Ice ShallowWater - Broken.tsx" firstgid="733" />
+  <tileset source="ridges/Ice ShallowWater - Ridge.tsx" firstgid="754" />
+  <tileset source="ridges/LongGrass Dirt - Flat.tsx" firstgid="775" />
+  <tileset firstgid="796" name="LongGrass Dirt - Ridge" columns="3" tilecount="30" tileheight="20" tilewidth="20">
+    <image source="bitmaps/longgrass2dirt_ridge.png" width="60" height="200" trans="008a76" />
+    <tile id="0">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="1">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="2">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="3">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="5">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="6" />
+    <tile id="7">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="8">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="12">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="14">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="18">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="20">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+  </tileset>
+  <tileset source="ridges/LongGrass LongGrass - Hill.tsx" firstgid="826" />
+  <tileset source="ridges/LongGrass LongGrass - Ridge.tsx" firstgid="847" />
+  <tileset source="ridges/LongGrass ShallowWater - Flat.tsx" firstgid="877" />
+  <tileset source="ridges/LongGrass ShallowWater - Ridge.tsx" firstgid="898" />
+  <tileset source="ridges/LongGrass ShortGrass - Flat.tsx" firstgid="928" />
+  <tileset source="ridges/Mountain Dirt - Flat.tsx" firstgid="949" />
+  <tileset source="ridges/Mountain Dirt - Ridge.tsx" firstgid="970" />
+  <tileset source="ridges/Mountain LongGrass - Flat.tsx" firstgid="985" />
+  <tileset source="ridges/Mountain Mountain - Hill.tsx" firstgid="1006" />
+  <tileset source="ridges/Mountain Mountain - Ridge.tsx" firstgid="1027" />
+  <tileset source="ridges/Mountain Nothing - Flat.tsx" firstgid="1042" />
+  <tileset source="ridges/Mountain Nothing - Ridge.tsx" firstgid="1063" />
+  <tileset source="ridges/Mountain Sand - Flat.tsx" firstgid="1078" />
+  <tileset source="ridges/Mountain Sand - Ridge.tsx" firstgid="1099" />
+  <tileset source="ridges/Mountain ShallowWater - Flat.tsx" firstgid="1114" />
+  <tileset source="ridges/Mountain ShallowWater - Ridge.tsx" firstgid="1135" />
+  <tileset source="ridges/Mountain Snow - Flat.tsx" firstgid="1150" />
+  <tileset source="ridges/Mountain Stone - Flat.tsx" firstgid="1171" />
+  <tileset source="ridges/Mountain Stone - Ridge.tsx" firstgid="1192" />
+  <tileset source="ridges/Nothing Sand - Flat.tsx" firstgid="1207" />
+  <tileset source="ridges/Sand Dirt - Flat.tsx" firstgid="1228" />
+  <tileset source="ridges/Sand Dirt - Ridge.tsx" firstgid="1249" />
+  <tileset source="ridges/Sand LandGrass - Flat.tsx" firstgid="1270" />
+  <tileset source="ridges/Sand Nothing - Flat.tsx" firstgid="1291" />
+  <tileset source="ridges/Sand Sand - Hill.tsx" firstgid="1312" />
+  <tileset source="ridges/Sand Sand - Ridge.tsx" firstgid="1333" />
+  <tileset source="ridges/Sand ShallowWater - Flat.tsx" firstgid="1354" />
+  <tileset source="ridges/Sand ShallowWater - Ridge.tsx" firstgid="1375" />
+  <tileset firstgid="1396" name="ShallowWater Water - Flat" columns="3" tilecount="21" tileheight="20" tilewidth="20">
+    <image source="bitmaps/shallowwater2water_flat.png" width="60" height="140" trans="008a76" />
+    <tile id="0">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="1">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="2">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="3">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="5">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="6">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="7">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="8">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="12">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="14">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="18">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="20">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+  </tileset>
+  <tileset source="ridges/Snow Dirt - Flat.tsx" firstgid="1417" />
+  <tileset source="ridges/Snow Dirt - Ridge.tsx" firstgid="1438" />
+  <tileset source="ridges/Snow Ice - Ridge.tsx" firstgid="1459" />
+  <tileset source="ridges/Snow Snow - Hill.tsx" firstgid="1480" />
+  <tileset source="ridges/Snow Snow - ridge.tsx" firstgid="1501" />
+  <tileset source="ridges/Stone Lava - Ridge.tsx" firstgid="1522" />
+  <tileset source="ridges/Stone Sand - Flat.tsx" firstgid="1537" />
+  <tileset source="ridges/Stone ShallowWater - ridge.tsx" firstgid="1558" />
+  <tileset source="ridges/Stone Snow - ridge.tsx" firstgid="1573" />
+  <tileset source="ridges/Stone Stone - Ridge.tsx" firstgid="1594" />
+  <tileset firstgid="1609" name="Water DeepWater - Flat" columns="3" tilecount="21" tileheight="20" tilewidth="20">
+    <image source="bitmaps/water2deepwater_flat.png" width="60" height="140" trans="008a76" />
+    <tile id="0">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="1">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="2">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="3">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="5">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="6">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="7">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="8">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="12">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="14">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="18">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+    <tile id="20">
+      <properties>
+        <property name="water" value="" />
+      </properties>
+    </tile>
+  </tileset>
+  <tileset firstgid="1630" name="stone2longgrass_ridge" columns="3" tilecount="15" tileheight="20" tilewidth="20">
+    <image source="bitmaps/stone2longgrass_ridge.png" width="60" height="100" />
+    <tile id="0">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="1">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="2">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="3">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="5">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="6">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="7">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="8">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="10">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="11">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="13">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+    <tile id="14">
+      <properties>
+        <property name="large-cliff" value="" />
+      </properties>
+    </tile>
+  </tileset>
+  <tileset firstgid="1645" name="snow2longgrass_flat" columns="3" tilecount="21" tileheight="20" tilewidth="20">
+    <image source="bitmaps/snow2longgrass_flat.png" width="60" height="140" />
+  </tileset>
+  <tileset firstgid="1666" name="longgrass2stone_flat" columns="3" tilecount="21" tileheight="20" tilewidth="20">
+    <image source="../rusted_warfare/assets/tilesets/bitmaps/longgrass2stone_flat.png" width="60" height="140" />
+  </tileset>
+  <layer name="Ground" width="150" height="200">
+    <data encoding="base64" compression="gzip">
+   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
+  </data>
+  </layer>
+  <layer name="Items" width="150" height="200">
+    <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3aSW7DMAwFUOcWndv7n7ICuimQZFGn36ao9wDv5YEmRWrbAAAAAAAAAAAAACDv6bJtz+N6uZy9Ejp5Hd/T27jefVeHWCWOP8b9fY7rq/l9ViGOSRDHAP2sUotyLLUoCWpRAGA19msk2K/Nqfr/wH5tTv4HJPgf1Fc9p5zJs9lPTrnPs9lPTrnPswEAAAAAAAAAgNqcSSTBmUQSnEmch9xCwpG5xTe8jiNzi/qIBPURAAAAAAAAAAAAwFycVyfBeXUSnFeHa/I4CZ3yuBipo1Me7xQj1NEpRgAAAAAA/otZDwlmPSSY9dQhd5Agd5AgdwAAALPSfyFB/4UE/RcAAAAA+DtzgN7Oer/mAL2d9X7NAXrzfgEAAABgbWZWJJhZ1dIlzs00ahHnJIhzAAAAAAAAKukyb6cW83YSzNsBAABgPfqXJOhfkqB/CQAAj9EDIEEPgAQ9AIBzqRtJUDeSoG7kN/mLBPmLBPkLeJS6hwR1DwnqHqiheu1QfX3cVr12qL4+bqteO1RfHwCwjz0JCfYkJNiTAAAAleipkKCnQoKeCgAAAAAAAAAAwI9vd5jvT8DUAQA=
+  </data>
+  </layer>
+  <layer name="Units" width="150" height="200">
+    <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3YUQ2AIBQFUP4sZBgzGMYCZqGbDVQm7AGek+Bu7+6ykRIAAAAAAAAAAAAA9GmLDjC5HB0A4MbTRtkwatIngHJHdAAAAACAgfmXBkZku4De2CVa0i8AAAAAAACA95boAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMA09ugAAAAAAAAAAAAAAAAAAECxMzoA8FmODkAV7khrOsZseun0Gh2AKnrpE224LwB/5h2kJf0CAAAAAAAAAAAAAABgJhck4J/1wNQBAA==
+  </data>
+  </layer>
+  <layer name="Set" opacity="0.8" width="150" height="200">
+    <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAAO3aoQ3AMAwAwZDuv21wVFAWmFfV6m4Cg5dl4DEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4zOvtCfgrbVHRFpW7LX1xwq4jbVHQFRVtUdEWBV1R0RYVbVHRFgVdUdEWBV1R0RYFXVHRFgX/NFR0RUVbFHRFRVsU3PBUdEVFW1S0RUFXFHRFRVvAl9hZFHRFRVtUtEVBV1S0RUFXFHRFRVtUtEVBV1S0RUFXVLRFQVdUtEVFWxR0RUVbFHRFRVsUdEVFWxR0RUFXVLRFRVsUdEVBVwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQW2I+6KcDUAQA=
+  </data>
+  </layer>
+  <objectgroup name="Triggers" />
+</map>

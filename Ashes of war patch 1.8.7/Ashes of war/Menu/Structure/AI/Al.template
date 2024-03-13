@@ -1,0 +1,84 @@
+#аванпост тег controlPoint
+
+#infantry, #heavy-infantry, #ekzo-infantry, #LT, #ST, #HT, #LM, #SM, #HM
+
+[hiddenAction_AICaper]
+autoTrigger: if numberOfUnitsInTeam(withTag='controlPoint', greaterThan=0, withinRange=550) and self.isControlledByAI() and not numberOfUnitsInEnemyTeam(withTag='#infantry_heroes', greaterThan=0, withinRange=200)
+addWaypoint_type: move
+addWaypoint_target_nearestUnit_tagged:controlPoint
+addWaypoint_target_nearestUnit_team:own
+clearActiveWaypoint: true
+clearAllWaypoints:true
+
+[hiddenAction_AIReCaper]
+autoTrigger: if numberOfUnitsInEnemyTeam(withTag='controlPoint', greaterThan=0, withinRange=550) and self.isControlledByAI() and not numberOfUnitsInEnemyTeam(withTag='#infantry_heroes', greaterThan=0, withinRange=200)
+addWaypoint_type: attackMove
+addWaypoint_target_nearestUnit_tagged:controlPoint
+addWaypoint_target_nearestUnit_team:enemy
+clearActiveWaypoint: true
+clearAllWaypoints:true
+
+
+
+[hiddenAction_AITarggedHero]
+autoTrigger: if self.hp(greaterThan=${core.maxHp*0.50}) and not self.hasActiveWaypoint() and self.isControlledByAI() and numberOfUnitsInEnemyTeam(withTag='#infantry_heroes', greaterThan=0, withinRange=350)
+addWaypoint_type: attack
+addWaypoint_target_nearestUnit_tagged: #infantry_heroes
+addWaypoint_target_nearestUnit_team:enemy
+clearActiveWaypoint: true
+clearAllWaypoints:true
+
+
+[hiddenAction_AITarggedAntiTeh]
+autoTrigger:  if not self.hasActiveWaypoint() and self.isControlledByAI() and self.tags(includes='AiAntiTeh') and not numberOfUnitsInEnemyTeam(withTag='#infantry_heroes', greaterThan=0, withinRange=350)
+addWaypoint_type: attack
+addWaypoint_target_nearestUnit_tagged: #ekzo-infantry, #LT, #ST, #HT, #LM, #SM, #HM
+addWaypoint_target_nearestUnit_team:enemy
+
+
+[hiddenAction_AITarggedAntiPeh]
+autoTrigger:  if not self.hasActiveWaypoint() and self.isControlledByAI() and self.tags(includes='AiAntiPeh') and not numberOfUnitsInEnemyTeam(withTag='#infantry_heroes', greaterThan=0, withinRange=350)
+addWaypoint_type: attack
+addWaypoint_target_nearestUnit_tagged: #infantry, #heavy-infantry
+addWaypoint_target_nearestUnit_team:enemy
+
+
+[hiddenAction_AILowHp]
+autoTrigger:if not self.hp(greaterThan=${core.maxHp*0.35}) and self.isControlledByAI()
+addWaypoint_type: move
+addWaypoint_target_nearestUnit_tagged: #base
+addWaypoint_target_nearestUnit_team:own
+clearActiveWaypoint: true
+clearAllWaypoints:true
+
+
+[hiddenAction_goBackMelee]
+autoTrigger:if self.numberOfUnitsInEnemyTeam(greaterThan=0, withTag='melee', withinRange=${attack.maxAttackRange-50}) and self.isControlledByAI()
+addWaypoint_type:move
+addWaypoint_prepend:true
+addWaypoint_target_fromReference:getOffsetAbsolute(x=cos(directionBetween(self, attacking))*(-150), y=sin(directionBetween(self, attacking))*(-150))
+addWaypoint_maxTime:1s
+clearAllWaypoints:true
+
+
+
+
+
+[hiddenAction_NoRepairMe]
+autoTrigger:if self.hp(greaterThan=${core.maxHp*0.80}) and self.tags(includes='repairme')
+temporarilyRemoveTags:repairme
+
+[hiddenAction_goRepair]
+autoTrigger:if not self.hp(greaterThan=${core.maxHp*0.20}) and self.isControlledByAI or self.tags(includes='repairme') and self.isControlledByAI
+addWaypoint_target_nearestUnit_tagged: repairbay
+#clearAllWaypoints:                  true
+addWaypoint_type:                   move
+addWaypoint_prepend:                true
+addWaypoint_target_nearestUnit_team:ally
+addWaypoint_maxTime:10s
+temporarilyAddTags:repairme
+
+[hiddenAction_goRepairTeam]
+@copyFromSection:hiddenAction_goRepair
+addWaypoint_target_nearestUnit_tagged:own
+addWaypoint_maxTime:1s

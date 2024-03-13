@@ -1,0 +1,86 @@
+[decal_Pavel]
+xOffsetRelative: 0
+yOffsetRelative: -65
+image: ROOT:Menu\Donat\pavel.png
+imageScale: 0.2
+isVisible:if self.playerName=="Вайзер"
+onlyWhileAlive:true
+alpha:0.85
+hOffset:0
+layer: beforeBody
+teamColors: false
+
+
+[decal_Fenris]
+xOffsetRelative: 0
+yOffsetRelative: -65
+image: ROOT:Menu\Donat\Fenris.png
+imageScale: 0.3
+isVisible:if self.playerName=="•[Fenris]•"
+onlyWhileAlive:true
+alpha:0.85
+hOffset:0
+layer: beforeBody
+teamColors: false
+
+[decal_Shade]
+xOffsetRelative: 0
+yOffsetRelative: -65
+image: ROOT:Menu\Donat\Shade.png
+imageScale: 0.25
+isVisible: if self.playerName=="Shade"
+onlyWhileAlive:true
+alpha:0.65
+hOffset:0
+layer: beforeBody
+teamColors: false
+
+
+[decal_phentemDOC]
+xOffsetRelative: 0
+yOffsetRelative: -65
+image: ROOT:Menu\Donat\phentemDOC.png
+imageScale: 0.3
+isVisible: if self.playerName=="phentemDOC"
+onlyWhileAlive:true
+alpha:0.7
+hOffset:0
+layer: beforeBody
+teamColors: false
+
+[decal_jottero]
+xOffsetRelative: 0
+yOffsetRelative: -65
+image: ROOT:Menu\Donat\jottero.png
+imageScale: 0.5
+isVisible: if self.playerName=="Jottero"
+onlyWhileAlive:true
+alpha:0.9
+hOffset:0
+layer: beforeBody
+teamColors: false
+
+[decal_dio]
+xOffsetRelative: 0
+yOffsetRelative: -65
+image: ROOT:Menu\Donat\Dio.png
+imageScale: 0.6
+isVisible: if self.playerName=="Dio"
+onlyWhileAlive:true
+alpha:0.9
+hOffset:0
+layer: beforeBody
+teamColors: false
+
+
+[decal_tester]
+xOffsetRelative: 0
+yOffsetRelative: -65
+image: ROOT:Menu\Donat\tester.png
+imageScale: 0.4
+isVisible: if self.playerName=="Sverchokus" or self.playerName=="ardi" or self.playerName=="Citron" or self.playerName=="Saint"
+onlyWhileAlive:true
+alpha:0.9
+hOffset:0
+layer: beforeBody
+teamColors: false

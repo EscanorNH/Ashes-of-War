@@ -1,0 +1,12 @@
+[mod]
+
+title: Ashes of war patch 1.8.7
+description: Мод в стиле sci-fi. Автор готов выслушать ваши идеи и принять их на расмотрение. так де приведствуется помощь в разработке \nDC: fenris_tarakanov
+
+thumbnail: NONE
+
+minVersion:1.15p11
+
+[music]
+sourceFolder: Menu/Structure/music/
+whenUsingUnitsFromThisMod_playExclusively: true

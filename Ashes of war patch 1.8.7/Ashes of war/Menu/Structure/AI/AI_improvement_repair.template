@@ -1,0 +1,18 @@
+[hiddenAction_NoRepairMe]
+autoTrigger:if self.hp(greaterThan=${core.maxHp*0.80}) and self.tags(includes='repairme')
+temporarilyRemoveTags:repairme
+
+[hiddenAction_goRepair]
+autoTrigger:if not self.hp(greaterThan=${core.maxHp*0.20}) and self.isControlledByAI or self.tags(includes='repairme') and self.isControlledByAI
+addWaypoint_target_nearestUnit_tagged: repairbay
+#clearAllWaypoints:                  true
+addWaypoint_type:                   move
+addWaypoint_prepend:                true
+addWaypoint_target_nearestUnit_team:ally
+addWaypoint_maxTime:10s
+temporarilyAddTags:repairme
+
+[hiddenAction_goRepairTeam]
+@copyFromSection:hiddenAction_goRepair
+addWaypoint_target_nearestUnit_tagged:own
+addWaypoint_maxTime:1s

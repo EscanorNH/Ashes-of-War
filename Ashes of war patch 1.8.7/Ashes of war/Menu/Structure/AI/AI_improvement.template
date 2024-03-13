@@ -1,0 +1,11 @@
+[hiddenAction_goBack]
+autoTrigger:if self.numberOfUnitsInEnemyTeam(greaterThan=0,withinRange=${attack.maxAttackRange-20}) and self.isControlledByAI() and not self.tags(includes='#building') and numberOfUnitsInEnemyTeam(withTag='botNotMicro', lessThan=1) and numberOfUnitsInAllyTeam(withTag='botNotMicro', lessThan=1)
+addWaypoint_type:move
+addWaypoint_prepend:true
+addWaypoint_target_fromReference:getOffsetAbsolute(x=cos(directionBetween(self, attacking))*(-150), y=sin(directionBetween(self, attacking))*(-150))
+addWaypoint_maxTime:1s
+clearAllWaypoints:true
+
+[hiddenAction_AIstart]
+autoTrigger:if not self.isControlledByAI and not self.tags(includes='botNotMicro')
+temporarilyAddTags: botNotMicro

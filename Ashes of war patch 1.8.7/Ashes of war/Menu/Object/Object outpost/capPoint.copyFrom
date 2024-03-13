@@ -1,0 +1,116 @@
+# The Capture System
+[core]
+@memory EZCP_units: float[]
+@memory EZCP_capRate: float
+@memory EZCP_contestant: float
+@memory EZCP_markers: unit[]
+@memory EZCP_temp: float[]
+@memory EZCP_capRatePerUnit: float
+@memory EZCP_capRateBase: float
+
+createNeutral: true
+stayNeutral: true
+# There to ensure it is created neutral, and stays neutral.
+
+[hiddenAction_EZCP_createEZCP_markers]
+autoTriggerOnEvent: created
+setUnitMemory: """
+EZCP_markers[0] = createMarker(x=self.x,y=self.y,teamId=0),
+EZCP_markers[1] = createMarker(x=self.x,y=self.y,teamId=1),
+EZCP_markers[2] = createMarker(x=self.x,y=self.y,teamId=2),
+EZCP_markers[3] = createMarker(x=self.x,y=self.y,teamId=3),
+EZCP_markers[4] = createMarker(x=self.x,y=self.y,teamId=4),
+EZCP_markers[5] = createMarker(x=self.x,y=self.y,teamId=5),
+EZCP_markers[6] = createMarker(x=self.x,y=self.y,teamId=6),
+EZCP_markers[7] = createMarker(x=self.x,y=self.y,teamId=7),
+EZCP_markers[8] = createMarker(x=self.x,y=self.y,teamId=8),
+EZCP_markers[9] = createMarker(x=self.x,y=self.y,teamId=9),
+EZCP_contestant = -2,
+EZCP_capRateBase = ${1/EZCP_capTimeMax},
+EZCP_capRatePerUnit = ${1/(EZCP_capTimeMax-EZCP_capTimeMin)/(EZCP_capMax-1)},
+EZCP_capRate=0
+"""
+switchToTeam: -1
+
+[hiddenAction_EZCP_checkCaptureWhileOwned]
+autoTrigger: true
+requireConditional: if (self.teamId >= 0 and self.numberOfUnitsInAllTeams(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange}, greaterThan=0))
+setUnitMemory: """
+EZCP_temp[0]=min(max(memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})-memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInEnemyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange}),-${EZCP_capMax}),${EZCP_capMax}),
+EZCP_temp[1]=select(memory.EZCP_temp[0] > 0, select(memory.EZCP_temp[0] == 1, memory.EZCP_capRateBase, memory.EZCP_capRateBase+(memory.EZCP_temp[0]-1)*memory.EZCP_capRatePerUnit),select(memory.EZCP_temp[0] < 0, select(memory.EZCP_temp[0] == -1, -memory.EZCP_capRateBase, (-memory.EZCP_capRateBase)+((memory.EZCP_temp[0]+1)*memory.EZCP_capRatePerUnit)), 0)),
+EZCP_capRate=min(1,memory.EZCP_capRate+memory.EZCP_temp[1])
+"""
+alsoTriggerAction: EZCP_neutralize
+
+[hiddenAction_EZCP_checkCaptureWhileNeutral]
+autoTrigger: true
+requireConditional: if (self.teamId <= -1 and self.numberOfUnitsInAllTeams(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange}, greaterThan=0))
+alsoTriggerAction: EZCP_checkCaptureWhileNeutral_EZCP_contestantA, EZCP_checkCaptureWhileNeutral_NoEZCP_contestantA
+
+[hiddenAction_EZCP_checkCaptureWhileNeutral_NoEZCP_contestantA]
+requireConditional: if (memory.EZCP_contestant == -2)
+setUnitMemory: """
+EZCP_units[0] = select(memory.EZCP_markers[0].self.teamWipedOut(), 0, memory.EZCP_markers[0].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[0].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[1] = select(memory.EZCP_markers[1].self.teamWipedOut(), 0, memory.EZCP_markers[1].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[1].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[2] = select(memory.EZCP_markers[2].self.teamWipedOut(), 0, memory.EZCP_markers[2].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[2].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[3] = select(memory.EZCP_markers[3].self.teamWipedOut(), 0, memory.EZCP_markers[3].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[3].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[4] = select(memory.EZCP_markers[4].self.teamWipedOut(), 0, memory.EZCP_markers[4].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[4].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[5] = select(memory.EZCP_markers[5].self.teamWipedOut(), 0, memory.EZCP_markers[5].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[5].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[6] = select(memory.EZCP_markers[6].self.teamWipedOut(), 0, memory.EZCP_markers[6].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[6].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[7] = select(memory.EZCP_markers[7].self.teamWipedOut(), 0, memory.EZCP_markers[7].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[7].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[8] = select(memory.EZCP_markers[8].self.teamWipedOut(), 0, memory.EZCP_markers[8].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[8].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_units[9] = select(memory.EZCP_markers[9].self.teamWipedOut(), 0, memory.EZCP_markers[9].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[9].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})*0.25 ),
+EZCP_contestant = select(memory.EZCP_units[0] > 0, 0, -2),
+EZCP_contestant = select(memory.EZCP_units[1] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[1] > memory.EZCP_units[memory.EZCP_contestant], 1, memory.EZCP_contestant) , 1), memory.EZCP_contestant),
+EZCP_contestant = select(memory.EZCP_units[2] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[2] > memory.EZCP_units[memory.EZCP_contestant], 2, memory.EZCP_contestant) , 2), memory.EZCP_contestant),
+EZCP_contestant = select(memory.EZCP_units[3] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[3] > memory.EZCP_units[memory.EZCP_contestant], 3, memory.EZCP_contestant) , 3), memory.EZCP_contestant),
+EZCP_contestant = select(memory.EZCP_units[4] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[4] > memory.EZCP_units[memory.EZCP_contestant], 4, memory.EZCP_contestant) , 4), memory.EZCP_contestant),
+EZCP_contestant = select(memory.EZCP_units[5] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[5] > memory.EZCP_units[memory.EZCP_contestant], 5, memory.EZCP_contestant) , 5), memory.EZCP_contestant),
+EZCP_contestant = select(memory.EZCP_units[6] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[6] > memory.EZCP_units[memory.EZCP_contestant], 6, memory.EZCP_contestant) , 6), memory.EZCP_contestant),
+EZCP_contestant = select(memory.EZCP_units[7] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[7] > memory.EZCP_units[memory.EZCP_contestant], 7, memory.EZCP_contestant) , 7), memory.EZCP_contestant),
+EZCP_contestant = select(memory.EZCP_units[8] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[8] > memory.EZCP_units[memory.EZCP_contestant], 8, memory.EZCP_contestant) , 8), memory.EZCP_contestant),
+EZCP_contestant = select(memory.EZCP_units[9] > 0, select(memory.EZCP_contestant >= 0, select(memory.EZCP_units[9] > memory.EZCP_units[memory.EZCP_contestant], 9, memory.EZCP_contestant) , 9), memory.EZCP_contestant),
+EZCP_units[10] = select(memory.EZCP_contestant >= 0, memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange}), 0)
+"""
+
+[hiddenAction_EZCP_checkCaptureWhileNeutral_EZCP_contestantA]
+requireConditional: if (memory.EZCP_contestant != -2)
+setUnitMemory: EZCP_units[10]=memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})
+alsoTriggerAction: EZCP_checkCaptureWhileNeutral_EZCP_contestantB
+
+[hiddenAction_EZCP_checkCaptureWhileNeutral_EZCP_contestantB]
+setUnitMemory: """
+EZCP_temp[0]=min(max(memory.EZCP_units[10]-memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInEnemyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange}),-${EZCP_capMax}),${EZCP_capMax}),
+EZCP_temp[1]=select(memory.EZCP_temp[0] > 0, select(memory.EZCP_temp[0] == 1, memory.EZCP_capRateBase, memory.EZCP_capRateBase+(memory.EZCP_temp[0]-1)*memory.EZCP_capRatePerUnit),select(memory.EZCP_temp[0] < 0, select(memory.EZCP_temp[0] == -1, -memory.EZCP_capRateBase, (-memory.EZCP_capRateBase)+((memory.EZCP_temp[0]+1)*memory.EZCP_capRatePerUnit)), 0)),
+EZCP_capRate=memory.EZCP_capRate+memory.EZCP_temp[1]
+"""
+alsoTriggerAction: EZCP_checkCaptureWhileNeutral_Reset, EZCP_checkCaptureWhileNeutral_Cap
+
+
+[hiddenAction_EZCP_checkCaptureWhileNeutral_Reset]
+requireConditional: if (memory.EZCP_capRate <= 0)
+setUnitMemory: """
+EZCP_contestant=-2,
+EZCP_capRate=0
+"""
+
+[hiddenAction_EZCP_checkCaptureWhileNeutral_Cap]
+requireConditional: if (memory.EZCP_capRate >= 1)
+setUnitMemory: """
+EZCP_capRate = 1
+"""
+switchToTeam: memory.EZCP_contestant
+sendMessageTo:nearestUnit(withInRange=300,withTag='#infantry_heroes')
+sendMessageWithTags: CapturePoint
+showMessageToPlayer: [The lighthouse is captured]
+showMessageToPlayer_ru: [Маяк захвачен]
+
+[hiddenAction_EZCP_neutralize]
+requireConditional: if (memory.EZCP_capRate <= 0)
+switchToTeam: -1
+setUnitMemory: """
+EZCP_capRate = 0,
+EZCP_contestant = -2
+"""
+#Haven't done this yet
+#Not sure if EZCP_markers[x].teamName works, meh, someone can test.

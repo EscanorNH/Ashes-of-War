@@ -1,0 +1,413 @@
+
+
+
+[global_resource_CM]
+displayName: Construction Materials
+displayNameShort: Construction Materials
+iconImage:ROOT:data/resources icon/CM.png
+displayColor: #00CC00
+hidden: false
+#REQ
+
+[global_resource_Iron]
+displayName: Alloy
+displayNameShort: Alloy
+iconImage:ROOT:data/resources icon/iron.png
+displayColor: #00CC00
+hidden: false
+
+[global_resource_Oil]
+displayName: Fuel
+displayNameShort: Fuel
+iconImage:ROOT:data/resources icon/full.png
+displayColor: #00CC00
+hidden: false
+
+[global_resource_Energy]
+displayName: Energy
+displayNameShort: Energy
+iconImage:ROOT:data/resources icon/E.png
+displayColor: #00CC00
+hidden: false
+
+[global_resource_Food]
+displayName: Provisions
+displayNameShort: Provisions
+iconImage:ROOT:data/resources icon/food.png
+displayColor: #00CC00
+hidden: false
+
+[global_resource_Biomass]
+displayName: Biomass
+displayNameShort: Biomass
+displayColor: #00CC00
+hidden: false
+
+[global_resource_Minerals]
+displayName: Minerals
+displayNameShort: Minerals
+displayColor: #00CC00
+hidden: false
+
+[global_resource_Gas]
+displayName: Gas
+displayNameShort: Gas 
+displayColor: #00CC00
+hidden: false
+
+[global_resource_Splinter]
+displayName: Splinter
+displayNameShort: Splinter
+displayColor: #00CC00
+hidden: false
+
+[global_resource_Iron_Ore]
+displayName: Ore
+displayNameShort: Ore
+iconImage:ROOT:data/resources icon/ore.png
+displayColor: #00CC00
+hidden: false
+
+
+[global_resource_FDpoint]
+displayName: Control Points
+displayNameShort: Control Points
+iconImage:ROOT:data/resources icon/FDpoint.png
+displayColor: #2effc4
+hidden: false
+
+[attack]
+aimOffsetSpread:1.2
+
+
+[decal_m1]
+layer: beforeUI
+teamColors:false 
+isVisible: if self.hasActiveWaypoint(type='move')
+drawLineTo: activeWaypointTarget
+basePosition:createMarker(x=self.x, y=self.y) 
+onlyWhenSelectedByOwnPlayer:true 
+alpha:0.8
+color:#00AB00
+
+[decal_a1]
+layer: beforeUI
+teamColors:false 
+isVisible: if self.hasActiveWaypoint(type='attack')
+drawLineTo: activeWaypointTarget
+basePosition:createMarker(x=self.x, y=self.y) 
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.8
+color:#8A150C
+
+[decal_am1]
+layer: beforeUI
+teamColors:false 
+isVisible: if self.hasActiveWaypoint(type='attackmove')
+drawLineTo: activeWaypointTarget
+basePosition:createMarker(x=self.x, y=self.y) 
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.8
+color:#AAAA2A
+
+[decal_gp]
+layer: beforeUI
+teamColors:false  
+isVisible: if self.hasActiveWaypoint(type='patrol') or self.hasActiveWaypoint(type='guard') 
+drawLineTo: activeWaypointTarget
+basePosition:createMarker(x=self.x, y=self.y) 
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.8
+color:#AAAA2A
+
+[decal_r1]
+layer: beforeUI
+teamColors:false 
+isVisible: if self.hasActiveWaypoint(type='reclaim')
+drawLineTo: activeWaypointTarget
+basePosition:createMarker(x=self.x, y=self.y) 
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.8
+color:#8A150C
+
+[decal_rp1]
+layer: beforeUI
+teamColors:false 
+isVisible: if self.hasActiveWaypoint(type='repair')
+drawLineTo: activeWaypointTarget
+basePosition:createMarker(x=self.x, y=self.y) 
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.8
+color:#73DBEA
+
+[decal_b1]
+layer: beforeUI
+teamColors:false 
+isVisible: if self.hasActiveWaypoint(type='build')
+drawLineTo: activeWaypointTarget
+basePosition:createMarker(x=self.x, y=self.y) 
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.8
+color:#00AB00
+
+
+
+
+[decal_m]
+layer: beforeUI
+imageStack: ROOT:data\marker's\move_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='move')
+basePosition: activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true 
+alpha:0.7
+
+[decal_a]
+layer: beforeUI
+imageStack: ROOT:data\marker's\attack_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='attack')
+basePosition:activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.7
+
+[decal_am]
+layer: beforeUI
+imageStack: ROOT:data\marker's\attackmove_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='attackmove')
+basePosition:activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.7
+
+[decal_g]
+layer: beforeUI
+imageStack: ROOT:data\marker's\follow_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='guard') 
+basePosition:activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.7
+
+[decal_p]
+layer: beforeUI
+imageStack: ROOT:data\marker's\warden_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='patrol') 
+basePosition:activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.7
+
+[decal_r]
+layer: beforeUI
+imageStack: ROOT:data\marker's\reclaim_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='reclaim') 
+basePosition:activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.7
+
+[decal_rp]
+layer: beforeUI
+imageStack: ROOT:data\marker's\repeir_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='repair') 
+basePosition:activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.7
+
+[decal_b]
+layer: beforeUI
+imageStack: ROOT:data\marker's\building_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='build') 
+basePosition:activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.7
+
+
+[decal_li]
+layer: beforeUI
+imageStack: ROOT:data\marker's\loadinto_marker.png
+imageScale:1
+teamColors:false 
+alwaysStartDirAtZero:true 
+isVisible: if self.hasActiveWaypoint(type='loadinto') 
+basePosition:activeWaypointTarget
+onlyWhenSelectedByOwnPlayer:true
+alpha:0.7
+
+
+
+
+
+[hiddenAction_KilledAUnit]
+autoTriggerOnEvent: killedAnyUnit
+alsoTriggerAction: KilledHero, KilledSummon, KilledAny
+sendMessageTo:nearestUnit(withInRange=150,withTag='#infantry_heroes')
+sendMessageWithTags: asistUnit
+isVisible: false
+buildSpeed: 0
+pos: 0
+
+[hiddenAction_KilledHero]
+requireConditional: if eventSource.tags(includes='#infantry_heroes')
+sendMessageTo:nearestUnit(withInRange=150,withTag='#infantry_heroes')
+sendMessageWithTags: asistHero
+addResources: unsetFlag=0
+isVisible: false
+buildSpeed: 0
+pos: 0
+
+[hiddenAction_KilledSummon]
+requireConditional: if eventSource.tags(includes='#summon')
+sendMessageTo:nearestUnit(withInRange=150,withTag='#infantry_heroes')
+sendMessageWithTags: asistSummon
+addResources: unsetFlag=0
+isVisible: false
+buildSpeed: 0
+pos: 0
+
+[hiddenAction_KilledAny]
+requireConditional: if self.hasFlag(id=0)
+sendMessageTo:nearestUnit(withInRange=150,withTag='#infantry_heroes')
+sendMessageWithTags: asistUnit
+isVisible: false
+buildSpeed: 0
+pos: 0
+
+
+[resource_xp]
+displayName: XP
+displayColor:#ff6c00
+
+
+
+[action_stanERClv1] 
+autoTrigger: if self.resource(type='localERClv1', greaterThan=1)
+addResources: localERClv1=-4
+
+isVisible: false
+buildSpeed: 4s
+pos: 0
+highPriorityQueue: true
+onlyOneUnitAtATime: true
+whenBuilding_cannotMove:true
+alsoQueueAction: stanERClv1e
+
+[action_stanERClv1e]
+isVisible: false
+buildSpeed: 4s
+pos: 0
+highPriorityQueue: true
+onlyOneUnitAtATime: true
+whenBuilding_cannotMove:true
+
+
+[resource_localERClv1]
+displayName: localERClv1
+displayRoundedDown:true
+
+
+[action_stanERClv2] 
+autoTrigger: if self.resource(type='localERClv2', greaterThan=1)
+addResources: localERClv2=-4
+
+isVisible: false
+buildSpeed: 5s
+pos: 0
+highPriorityQueue: true
+onlyOneUnitAtATime: true
+whenBuilding_cannotMove:true
+alsoQueueAction: stanERClv2e
+
+[action_stanERClv2e]
+isVisible: false
+buildSpeed: 5s
+pos: 0
+highPriorityQueue: true
+onlyOneUnitAtATime: true
+whenBuilding_cannotMove:true
+
+
+[resource_localERClv2]
+displayName: localERClv2
+displayRoundedDown:true
+
+
+[action_stanERClv3] 
+autoTrigger: if self.resource(type='localERClv3', greaterThan=1)
+addResources: localERClv3=-4
+
+isVisible: false
+buildSpeed: 6s
+pos: 0
+highPriorityQueue: true
+onlyOneUnitAtATime: true
+whenBuilding_cannotMove:true
+alsoQueueAction: stanERClv3e
+
+[action_stanERClv3e]
+isVisible: false
+buildSpeed: 6s
+pos: 0
+highPriorityQueue: true
+onlyOneUnitAtATime: true
+whenBuilding_cannotMove:true
+
+
+[resource_localERClv3]
+displayName: localERClv3
+displayRoundedDown:true
+
+
+[resource_localStan]
+displayName: localStan
+displayRoundedDown:true
+
+[hiddenAction_stan1]
+autoTrigger: if self.resource(type='localStan', greaterThan=1)
+resourceAmount: localStan
+resourceAmount_setValue:1
+
+[hiddenAction_stan1Unit]
+autoTrigger: if self.resource(type='localStan', greaterThan=0)
+addWaypoint_type:move
+addWaypoint_position_randomOffsetFromSelf: 50,50
+addWaypoint_prepend:true
+addResources: localStan=-1
+spawnEffects: CUSTOM:stan
+
+[effect_stan]
+attachedToUnit: true
+life: 150
+alpha: 1
+hOffset:2
+xOffsetRelativeRandom: 2
+yOffsetRelativeRandom: 2
+hSpeed: 0.05
+dirSpeed:2
+dirSpeedRandom: 2
+dirOffsetRandom: 360
+fadeInTime:10
+image: ROOT:\data\Status\stan.png
+priority: high
+drawUnderUnits:false
+scaleFrom:0.8
+scaleTo: 0.4

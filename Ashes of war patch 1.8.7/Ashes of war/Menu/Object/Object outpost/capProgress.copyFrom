@@ -1,0 +1,96 @@
+[template_EZCP_decal]
+order: 2
+layer: beforeUI
+imageScaleX: ${EZCP_decalWidth}*memory.EZCP_capRate
+imageScaleY: ${EZCP_decalHeight}
+xOffsetAbsolute: ${EZCP_decalX-EZCP_decalWidth/2}+memory.EZCP_capRate*${EZCP_decalWidth/2}
+yOffsetAbsolute: ${EZCP_decalY}
+image: SHARED:white_pixel.png
+alwaysStartDirAtZero: true
+color: ${color}
+isVisible: if (self.teamId==-1 and memory.EZCP_contestant == ${team}) or (self.teamId == ${team})
+
+[decal_EZCP_amount]
+order: 3
+isVisible: if (self.numberOfUnitsInAllTeams(withTag="${EZCP_capTag}",withinRange=${EZCP_capRange},greaterThan=0) )
+layer: beforeUI
+image: progress.png
+frame_width: ${EZCP_decalFrameWidth}
+frame_height: ${EZCP_decalFrameHeight}
+imageScale: ${0.75*(EZCP_decalHeight/3)}
+xOffsetAbsolute: ${EZCP_decalX+EZCP_decalWidth/2+EZCP_decalSize/2}
+yOffsetAbsolute: ${EZCP_decalY}
+frame: ${EZCP_decalFrameOffset}+min(max(select(memory.EZCP_contestant >= 0,min(max(memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInAllyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})+memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange})-memory.EZCP_markers[memory.EZCP_contestant].numberOfUnitsInEnemyTeam(withTag="${EZCP_capTag}", withinRange=${EZCP_capRange}),-${EZCP_capMax}),${EZCP_capMax}), 0),-${EZCP_capMax}),${EZCP_capMax})
+
+[decal_EZCP_background]
+order: 0
+layer: beforeUI
+imageScaleX: ${EZCP_decalWidth+EZCP_decalBorder*2}
+imageScaleY: ${EZCP_decalHeight+EZCP_decalBorder*2}
+xOffsetAbsolute: ${EZCP_decalX}
+yOffsetAbsolute: ${EZCP_decalY}
+image: blackPixel.png
+
+[decal_EZCP_background_2]
+order: 1
+layer: beforeUI
+imageScaleX: ${EZCP_decalWidth}
+imageScaleY: ${EZCP_decalHeight}
+xOffsetAbsolute: ${EZCP_decalX}
+yOffsetAbsolute: ${EZCP_decalY}
+image: darkGrey.png
+
+[decal_EZCP_team_neutral]
+@copyFromSection: template_EZCP_decal
+@define color: #AAAAAA
+@define team: -2
+
+[decal_EZCP_team0]
+@copyFromSection: template_EZCP_decal
+@define color: #00ff00
+@define team: 0
+
+[decal_EZCP_team1]
+@copyFromSection: template_EZCP_decal
+@define color: #d02013
+@define team: 1
+
+[decal_EZCP_team2]
+@copyFromSection: template_EZCP_decal
+@define color: #0463f3
+@define team: 2
+
+[decal_EZCP_team3]
+@copyFromSection: template_EZCP_decal
+@define color: #ffff40
+@define team: 3
+
+[decal_EZCP_team4]
+@copyFromSection: template_EZCP_decal
+@define color: #00ffff
+@define team: 4
+
+[decal_EZCP_team5]
+@copyFromSection: template_EZCP_decal
+@define color: #d0f8f7
+@define team: 5
+
+[decal_EZCP_team6]
+@copyFromSection: template_EZCP_decal
+@define color: #000000
+@define team: 6
+
+[decal_EZCP_team7]
+@copyFromSection: template_EZCP_decal
+@define color: #ff00ea
+@define team: 7
+
+[decal_EZCP_team8]
+@copyFromSection: template_EZCP_decal
+@define color: #ff7f18
+@define team: 8
+
+[decal_EZCP_team9]
+@copyFromSection: template_EZCP_decal
+@define color: #9368c4
+@define team: 9
